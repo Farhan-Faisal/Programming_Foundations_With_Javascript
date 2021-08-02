@@ -1,0 +1,15 @@
+// Green Screen Algorithm
+
+function green_screen(foreground, background, output){
+    for(var pixel of foreground.values()){
+        if(pixel.getGreen() == 255){
+            var x = pixel.getX();
+            var y = pixel.getY();
+            var rpixel = background.getPixel(x, y);
+            output.setPixel(x, y, rpixel);
+        }
+        else{
+            output.setPixel(pixel.getX(), pixel.getY(), pixel);
+        }
+    }
+}
