@@ -13,3 +13,21 @@ function green_screen(foreground, background, output){
         }
     }
 }
+
+
+// Add border function
+
+function green_screen(image, thickness){
+    for(var pixel of image.values()){
+        if(pixel.getX() < thickness || pixel.getX() > image.getWidth() - thickness){
+            pixel.setGreen(0);
+            pixel.setBlue(0);
+            pixel.setRed(0);
+        }
+        if (pixel.getY() < thickness || pixel.getY() > image.getHeight() - thickness){
+            pixel.setGreen(0);
+            pixel.setBlue(0);
+            pixel.setRed(0);
+        }
+    }
+}
